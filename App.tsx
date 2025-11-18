@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo } from 'react';
 import { CalendarGrid } from './components/CalendarGrid';
 import { CampaignList } from './components/CampaignList';
@@ -386,8 +385,8 @@ const App: React.FC = () => {
       </div>
       
       {/* Version Footer */}
-      <div className="bg-white border-t border-slate-200 py-1 px-4 text-center text-[10px] text-slate-400 z-20">
-        OmniPlan v1.3 • Conectado a la Nube ☁️
+      <div className="bg-indigo-600 border-t border-indigo-700 py-2 px-4 text-center text-xs text-white font-bold z-20">
+        OmniPlan v1.6 • ACTUALIZACIÓN MÓVIL 📱
       </div>
 
       <CampaignModal 
