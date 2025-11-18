@@ -1,6 +1,9 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { CAMPAIGN_TYPES } from "../constants";
 
+// Declare process variable to avoid TypeScript errors during build
+declare var process: any;
+
 const getAiClient = () => {
   // The API key must be obtained exclusively from the environment variable process.env.API_KEY.
   // Assume this variable is pre-configured, valid, and accessible.
@@ -46,7 +49,9 @@ export const generateCampaignIdeas = async (
     });
 
     if (response.text) {
-      return JSON.parse(response.text);
+      // Robust cleanup: Remove markdown code blocks (```json ... ```) if present
+      const cleanText = response.text.replace(/```json\n?|```/g, '').trim();
+      return JSON.parse(cleanText);
     }
     return [];
   } catch (error) {
