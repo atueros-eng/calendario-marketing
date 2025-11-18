@@ -384,6 +384,11 @@ const App: React.FC = () => {
           )}
         </main>
       </div>
+      
+      {/* Version Footer */}
+      <div className="bg-white border-t border-slate-200 py-1 px-4 text-center text-[10px] text-slate-400 z-20">
+        OmniPlan v1.2 • Conectado a la Nube
+      </div>
 
       <CampaignModal 
         isOpen={isModalOpen}
